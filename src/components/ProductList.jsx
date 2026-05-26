@@ -1,5 +1,6 @@
 import useFetchProducts from "../hooks/useFetchProducts";
 import Loader from "./Loader";
+import ProductItem from "./ProductItem";
 
 function ProductList() {
   const {
@@ -21,9 +22,10 @@ function ProductList() {
       <h1>Products</h1>
 
       {products.map((product) => (
-        <h3 key={product.id}>
-          {product.title}
-        </h3>
+        <ProductItem
+          key={product.id}
+          product={product}
+        />
       ))}
     </div>
   );
