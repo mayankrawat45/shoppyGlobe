@@ -1,12 +1,10 @@
 import './App.css'
+import Approuter from './routes/AppRouter'
+import { RouterProvider } from 'react-router-dom'
 
 function App() {
 
-  return (
-    <>
-      <h2 className='text-xl'>sdjldjlsd</h2>
-    </>
-  )
+  return <RouterProvider router={Approuter}/>
 }
 
 export default App
