@@ -1,9 +1,32 @@
-import React from 'react'
+import useFetchProducts from "../hooks/useFetchProducts";
+import Loader from "./Loader";
 
-const ProductList = () => {
+function ProductList() {
+  const {
+    products,
+    loading,
+    error,
+  } = useFetchProducts();
+
+  if (loading) {
+    return <Loader />;
+  }
+
+  if (error) {
+    return <h2>{error}</h2>;
+  }
+
   return (
-    <div>ProductList</div>
-  )
+    <div>
+      <h1>Products</h1>
+
+      {products.map((product) => (
+        <h3 key={product.id}>
+          {product.title}
+        </h3>
+      ))}
+    </div>
+  );
 }
 
-export default ProductList
+export default ProductList;
