@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import CartItem from "../components/CartItem";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const cartItems = useSelector(
@@ -21,6 +22,9 @@ function Cart() {
           />
         ))
       )}
+      <Link to="/checkout">
+        <button>Proceed To Checkout</button>
+      </Link>
     </div>
   );
 }
