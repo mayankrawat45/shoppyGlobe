@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function Header() {
@@ -13,11 +13,23 @@ function Header() {
       </h1>
 
       <nav className="flex gap-6">
-        <Link to="/">Home</Link>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "text-yellow-400" : ""
+          }
+        >
+          Home
+        </NavLink>
 
-        <Link to="/cart">
+        <NavLink
+          to="/cart"
+          className={({ isActive }) =>
+            isActive ? "text-yellow-400" : ""
+          }
+        >
           Cart ({cartItems.length})
-        </Link>
+        </NavLink>
       </nav>
     </header>
   );

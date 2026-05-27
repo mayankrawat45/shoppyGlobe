@@ -45,7 +45,7 @@ function Cart() {
           </h2>
 
           <Link to="/checkout">
-            <button className="bg-black text-white px-6 py-3 rounded-md">
+            <button className="bg-black hover:bg-gray-800 transition text-white px-6 py-3 rounded-md">
               Proceed To Checkout
             </button>
           </Link>

@@ -5,7 +5,7 @@ import { addToCart } from "../redux/cartSlice";
 function ProductItem({ product }) {
   const dispatch = useDispatch();
   return (
-    <div className="bg-white rounded-xl shadow-md p-4 text-center">
+    <div className="bg-white rounded-xl shadow-md p-4 text-center hover:scale-105 transition duration-300">
       <img
         loading="lazy"
         src={product.thumbnail}
@@ -23,7 +23,7 @@ function ProductItem({ product }) {
 
       <br />
 
-      <button className="bg-black text-white px-4 py-2 rounded-md mt-3 cursor-pointer" onClick={() => dispatch(addToCart(product))}>
+      <button className="bg-black hover:bg-gray-800 transition text-white px-4 py-2 rounded-md mt-3 cursor-pointer" onClick={() => dispatch(addToCart(product))}>
         Add To Cart
       </button>
     </div>
