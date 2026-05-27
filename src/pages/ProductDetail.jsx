@@ -62,7 +62,7 @@ function ProductDetail() {
   }
 
   return (
-    <div className="p-6 flex flex-col md:flex-row gap-10">
+    <div className="p-6 min-h-[80vh] flex flex-col md:flex-row gap-10">
       <img
         src={product.thumbnail}
         alt={product.title}

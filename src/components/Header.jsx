@@ -16,7 +16,7 @@ function Header() {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive ? "text-yellow-400" : ""
+            isActive ? "text-yellow-400" : "hover:text-gray-300 transition"
           }
         >
           Home
@@ -25,7 +25,7 @@ function Header() {
         <NavLink
           to="/cart"
           className={({ isActive }) =>
-            isActive ? "text-yellow-400" : ""
+            isActive ? "text-yellow-400" : "hover:text-gray-300 transition"
           }
         >
           Cart ({cartItems.length})

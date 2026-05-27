@@ -3,7 +3,7 @@ import SearchBar from "../components/SearchBar";
 
 function Home() {
   return (
-    <div>
+    <div className="min-h-[80vh]">
       <div className="p-6">
         <SearchBar />
       </div>

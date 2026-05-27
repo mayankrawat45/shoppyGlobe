@@ -44,14 +44,15 @@ function Cart() {
             Total: ${totalPrice}
           </h2>
 
-          <button
-            disabled={cartItems.length === 0}
-            className="bg-black hover:bg-gray-800 transition text-white px-6 py-3 rounded-md disabled:bg-gray-400"
+          <Link
+            to="/checkout"
+            className={`px-6 py-3 rounded-md text-white w-fit ${cartItems.length === 0
+                ? "bg-gray-400 pointer-events-none"
+                : "bg-black hover:bg-gray-800 transition"
+              }`}
           >
-            <Link to="/checkout">
-              Proceed To Checkout
-            </Link>
-          </button>
+            Proceed To Checkout
+          </Link>
         </div>
       )}
     </div>
