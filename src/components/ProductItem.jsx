@@ -10,7 +10,7 @@ function ProductItem({ product }) {
         loading="lazy"
         src={product.thumbnail}
         alt={product.title}
-        className="w-full h-52 object-cover rounded-lg"
+        className="w-full h-52 object-cover rounded-lg hover:scale-105 transition duration-300"
       />
 
       <h2>{product.title}</h2>

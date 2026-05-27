@@ -12,7 +12,7 @@ function Header() {
         ShoppyGlobe
       </h1>
 
-      <nav className="flex gap-6">
+      <nav className="flex gap-6 text-lg">
         <NavLink
           to="/"
           className={({ isActive }) =>
