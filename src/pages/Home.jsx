@@ -4,7 +4,10 @@ import SearchBar from "../components/SearchBar";
 function Home() {
   return (
     <div>
-      <SearchBar/>
+      <div className="p-6">
+        <SearchBar />
+      </div>
+
       <ProductList />
     </div>
   );
