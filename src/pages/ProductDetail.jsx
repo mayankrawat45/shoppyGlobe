@@ -66,7 +66,7 @@ function ProductDetail() {
       <img
         src={product.thumbnail}
         alt={product.title}
-        className="w-full md:w-[400px] rounded-xl shadow-md"
+        className="w-full md:w-[400px] h-[300px] md:h-[400px] object-cover rounded-xl shadow-md"
       />
 
       <div className="flex flex-col gap-4">

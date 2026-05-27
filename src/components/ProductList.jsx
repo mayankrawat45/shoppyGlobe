@@ -23,6 +23,16 @@ function ProductList() {
 
   const filteredProducts = products.filter(({ title }) => title.toLowerCase().includes(searchTerm.toLowerCase()))
 
+  if (filteredProducts.length === 0) {
+    return (
+      <div className="flex justify-center items-center h-[50vh]">
+        <h2 className="text-2xl font-semibold">
+          No Products Found
+        </h2>
+      </div>
+    );
+  }
+
   return (
     <div>
       <h1>Products</h1>

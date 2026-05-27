@@ -7,7 +7,7 @@ function Header() {
   );
 
   return (
-    <header className="bg-black text-white px-6 py-4 flex justify-between items-center">
+    <header className="bg-black text-white px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
       <h1 className="text-2xl font-bold">
         ShoppyGlobe
       </h1>
