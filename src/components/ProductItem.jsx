@@ -7,6 +7,7 @@ function ProductItem({ product }) {
   return (
     <div className="">
       <img
+        loading="lazy"
         src={product.thumbnail}
         alt={product.title}
         width="200"
