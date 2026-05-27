@@ -1,14 +1,23 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+
+import { addToCart } from "../redux/cartSlice";
+
 function ProductDetail() {
   const { id } = useParams();
 
-  const [product, setProduct] =useState(null);
+  const dispatch = useDispatch();
 
-  const [loading, setLoading] =useState(true);
+  const [product, setProduct] =
+    useState(null);
 
-  const [error, setError] =useState("");
+  const [loading, setLoading] =
+    useState(true);
+
+  const [error, setError] =
+    useState("");
 
   useEffect(() => {
     async function fetchProduct() {
@@ -39,26 +48,51 @@ function ProductDetail() {
   }, [id]);
 
   if (loading) {
-    return <h2>Loading...</h2>;
+    return (
+      <h2 className="p-6 text-2xl">
+        Loading...
+      </h2>
+    );
   }
 
   if (error) {
-    return <h2>{error}</h2>;
+    return (
+      <h2 className="p-6 text-red-500">
+        {error}
+      </h2>
+    );
   }
 
   return (
-    <div>
+    <div className="p-6 flex flex-col md:flex-row gap-10">
       <img
         src={product.thumbnail}
         alt={product.title}
-        width="250"
+        className="w-full md:w-[400px] rounded-xl shadow-md"
       />
 
-      <h1>{product.title}</h1>
+      <div className="flex flex-col gap-4">
+        <h1 className="text-4xl font-bold">
+          {product.title}
+        </h1>
 
-      <p>{product.description}</p>
+        <p className="text-gray-600">
+          {product.description}
+        </p>
 
-      <h2>${product.price}</h2>
+        <h2 className="text-3xl font-semibold">
+          ${product.price}
+        </h2>
+
+        <button
+          onClick={() =>
+            dispatch(addToCart(product))
+          }
+          className="bg-black text-white px-6 py-3 rounded-md w-fit"
+        >
+          Add To Cart
+        </button>
+      </div>
     </div>
   );
 }
