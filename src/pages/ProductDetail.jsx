@@ -51,11 +51,13 @@ function ProductDetail() {
     return <Loader />;
   }
 
-  if (error) {  
+  if (error) {
     return (
-      <h2 className="p-6 text-red-500">
-        {error}
-      </h2>
+      <div className="flex justify-center items-center h-[50vh]">
+        <h2 className="text-red-500 text-2xl">
+          {error}
+        </h2>
+      </div>
     );
   }
 
