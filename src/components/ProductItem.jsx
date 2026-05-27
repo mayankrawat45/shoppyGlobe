@@ -5,25 +5,25 @@ import { addToCart } from "../redux/cartSlice";
 function ProductItem({ product }) {
   const dispatch = useDispatch();
   return (
-    <div className="">
+    <div className="bg-white rounded-xl shadow-md p-4 text-center">
       <img
         loading="lazy"
         src={product.thumbnail}
         alt={product.title}
-        width="200"
+        className="w-full h-52 object-cover rounded-lg"
       />
 
       <h2>{product.title}</h2>
 
       <p>${product.price}</p>
 
-      <Link to={`/product/${product.id}`}>
+      <Link className="block mt-3 text-blue-500" to={`/product/${product.id}`}>
         View Details
       </Link>
 
       <br />
 
-      <button className="cursor-pointer" onClick={() => dispatch(addToCart(product))}>
+      <button className="bg-black text-white px-4 py-2 rounded-md mt-3 cursor-pointer" onClick={() => dispatch(addToCart(product))}>
         Add To Cart
       </button>
     </div>

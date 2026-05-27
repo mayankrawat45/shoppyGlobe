@@ -21,12 +21,14 @@ function ProductList() {
     <div>
       <h1>Products</h1>
 
-      {filteredProducts.map((product) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+        {filteredProducts.map((product) => (
         <ProductItem
           key={product.id}
           product={product}
         />
       ))}
+      </div>
     </div>
   );
 }
