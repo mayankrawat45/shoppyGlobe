@@ -10,6 +10,10 @@ function Checkout() {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
+  
+  if (cartItems.length === 0) {
+  return <h2>Your Cart is Empty</h2>;
+}
 
   function handlePlaceOrder() {
     alert("Order placed");
