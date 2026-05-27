@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import Loader from "../components/Loader";
 import { useDispatch } from "react-redux";
 
 import { addToCart } from "../redux/cartSlice";
@@ -48,14 +48,10 @@ function ProductDetail() {
   }, [id]);
 
   if (loading) {
-    return (
-      <h2 className="p-6 text-2xl">
-        Loading...
-      </h2>
-    );
+    return <Loader />;
   }
 
-  if (error) {
+  if (error) {  
     return (
       <h2 className="p-6 text-red-500">
         {error}

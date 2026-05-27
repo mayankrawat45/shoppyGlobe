@@ -7,6 +7,11 @@ function Cart() {
   const cartItems = useSelector(
     (state) => state.cart.cartItems
   );
+  const totalPrice = cartItems.reduce(
+    (total, item) =>
+      total + item.price * item.quantity,
+    0
+  );
 
   return (
     <div className="p-6">
@@ -15,9 +20,17 @@ function Cart() {
       </h1>
 
       {cartItems.length === 0 ? (
-        <h2 className="text-xl">
-          Your Cart is Empty
-        </h2>
+        <div className="flex flex-col items-center gap-4">
+          <h2 className="text-2xl font-semibold">
+            Your Cart is Empty
+          </h2>
+
+          <Link to="/">
+            <button className="bg-black text-white px-5 py-2 rounded-md">
+              Continue Shopping
+            </button>
+          </Link>
+        </div>
       ) : (
         <div className="flex flex-col gap-4">
           {cartItems.map((item) => (
@@ -26,6 +39,10 @@ function Cart() {
               item={item}
             />
           ))}
+
+          <h2 className="text-2xl font-bold">
+            Total: ${totalPrice}
+          </h2>
 
           <Link to="/checkout">
             <button className="bg-black text-white px-6 py-3 rounded-md">

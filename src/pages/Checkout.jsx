@@ -8,7 +8,11 @@ function Checkout() {
   const cartItems = useSelector(
     (state) => state.cart.cartItems
   );
-
+  const totalPrice = cartItems.reduce(
+    (total, item) =>
+      total + item.price * item.quantity,
+    0
+  );
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -76,6 +80,9 @@ function Checkout() {
         ))}
       </div>
 
+      <h2 className="text-2xl font-bold mb-6">
+        Total Price: ${totalPrice}
+      </h2>
       <button
         onClick={handlePlaceOrder}
         className="bg-black text-white px-6 py-3 rounded-md"

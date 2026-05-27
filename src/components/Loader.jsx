@@ -1,9 +1,11 @@
-import React from 'react'
-
-const Loader = () => {
+function Loader() {
   return (
-    <h2>Loading...</h2>
-  )
+    <div className="flex justify-center items-center h-[60vh]">
+      <h2 className="text-3xl font-bold">
+        Loading...
+      </h2>
+    </div>
+  );
 }
 
-export default Loader
+export default Loader;
